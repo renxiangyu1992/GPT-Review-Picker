@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "handoff_id": "handoff-example-01",
+  "conversation_id": "conversation-example-01",
+  "display_name": "Example conversation",
+  "rename_conversation": false,
+  "project_name": "Example Project",
+  "task_name": "Create reviewable report",
+  "stage": "DOCUMENTATION",
+  "project_root": "C:\\Example\\ReviewableProject",
+  "generated_at": "2030-01-02T03:04:05Z",
+  "final_response": "The requested report is complete and ready for independent review.",
+  "items": [
+    {
+      "label": "Report",
+      "path": "report.md",
+      "priority": "MUST",
+      "reason": "Primary reviewable deliverable",
+      "default_selected": true
+    },
+    {
+      "label": "Focused verification",
+      "path": "verification.txt",
+      "priority": "RECOMMENDED",
+      "reason": "Concise verification evidence",
+      "default_selected": false
+    },
+    {
+      "label": "Supplementary screenshot",
+      "path": "supplementary.png",
+      "priority": "OPTIONAL",
+      "reason": "Auxiliary visual context",
+      "default_selected": false
+    }
+  ]
+}

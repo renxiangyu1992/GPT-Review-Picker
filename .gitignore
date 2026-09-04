@@ -1,0 +1,44 @@
+# Build output
+bin/
+obj/
+Debug/
+Release/
+publish/
+publish-*/
+
+# Visual Studio and IDE state
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.idea/
+.vscode/
+
+# Logs, diagnostics, and dumps
+*.log
+*.dmp
+*.dump
+*.stackdump
+
+# Local runtime state and generated review bundles
+.gpt-review/
+artifacts/
+*.tmp
+*.tmp.*
+
+# Local configuration and environment files
+appsettings.Local.json
+appsettings.*.Local.json
+*.local.json
+.env
+.env.*
+
+# Test/tool generated output
+TestResults/
+coverage/
+*.nupkg
+
+# OS metadata
+.DS_Store
+Thumbs.db

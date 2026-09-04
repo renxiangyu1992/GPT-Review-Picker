@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>GPTReviewPicker</AssemblyName>
+    <RootNamespace>GPTReviewPicker</RootNamespace>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+    <DebugType Condition="'$(Configuration)' == 'Release'">none</DebugType>
+    <DebugSymbols Condition="'$(Configuration)' == 'Release'">false</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Tests\**\*.cs" />
+    <Compile Remove="Tools\**\*.cs" />
+    <EmbeddedResource Include="Assets\XiangyuRen_avatar.png">
+      <LogicalName>GPTReviewPicker.Assets.XiangyuRen_avatar.png</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
