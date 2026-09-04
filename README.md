@@ -1,27 +1,73 @@
 # GPT Review Picker
 
-**GPT Review Picker by Xiangyu Ren** is a local Windows 10/11 utility for handing completed AI Agent work to an independent Reviewer. The executor finishes the task first, freezes its task-result statement, and selects a minimal evidence set. Picker lets a human choose which local sources enter the Review Tray.
+**Executor ≠ Reviewer.**
+
+GPT Review Picker is a local Windows tool that lets an AI agent hand off completed work to an independent reviewer — with only the evidence that matters.
+
+[**Download for Windows**](https://github.com/renxiangyu1992/GPT-Review-Picker/releases) · [**Set up Codex**](docs/CODEX_SETUP.md)
+
+> The packaged Windows 10/11 x64 ZIP will appear on GitHub Releases with v0.1.0. Until then, this repository is a private preview. The source archive behind GitHub's green **Code** button is not the Windows app download.
+
+![Execute, handoff, and independent review workflow](docs/assets/workflow-overview.svg)
+
+## Why?
+
+AI agents can execute substantial tasks, but asking the same agent to be the only judge of its own work weakens independent review. GPT Review Picker creates a lightweight handoff between the executor and a separate reviewer without treating self-review as inherently invalid.
+
+## Quick start
+
+### 1. Download
+
+Download the packaged Windows x64 ZIP from [GitHub Releases](https://github.com/renxiangyu1992/GPT-Review-Picker/releases), unzip it, and run:
 
 ```text
-Agent task result
-  -> Producer Request 1.0
-  -> Manifest 1.2 + Result v1
-  -> local current-user delivery
-  -> Picker Handoff Tab
-  -> human-selected Review Tray
-  -> independent Reviewer
+GPTReviewPicker.exe
 ```
 
-Picker is not the task executor, correctness judge, repository watcher, cloud upload service, or independent Reviewer.
+The packaged build is self-contained, so it should not require a separate .NET runtime. The executable is not currently claimed to be code-signed or SmartScreen-free.
 
-## Start here
+### 2. Set up Codex once
 
+Open [Codex Setup](docs/CODEX_SETUP.md) and copy its setup prompt once into your Codex or Agent instruction environment.
+
+![GPT Review Picker setup prompt placed in a Codex instruction file](docs/assets/codex-setup.png)
+
+Set up once. Then work normally. Normal users do **not** need to write Producer Request JSON by hand.
+
+### 3. Work normally
+
+Complete tasks as usual. When a substantive result is ready for independent review, the Agent sends its completed statement and a minimal evidence set to Picker.
+
+### 4. Review independently
+
+Choose the Agent Statement and files you want reviewed, then send that selection to ChatGPT or another independent Reviewer. Picker is the handoff tool; it is not the Reviewer.
+
+## See the Picker
+
+![GPT Review Picker showing a synthetic review handoff and selectable evidence](docs/assets/picker-interface.png)
+
+The screenshot uses synthetic example data. The user decides which evidence enters the Review Tray before sending it to an independent Reviewer.
+
+## Local and under your control
+
+Picker works with local file paths and does not upload evidence by itself. You remain in control of what is selected and sent. Any downstream review service you choose, including ChatGPT, follows its own data-handling terms after you send the selected material.
+
+## Download versus source code
+
+- **Normal Windows users:** download the packaged Windows ZIP from [GitHub Releases](https://github.com/renxiangyu1992/GPT-Review-Picker/releases).
+- **Developers:** clone this repository and use the build instructions below.
+
+Do not use GitHub's repository source ZIP as a substitute for the packaged Windows application.
+
+## Documentation
+
+- [Codex Setup](docs/CODEX_SETUP.md) — the authoritative one-time Agent setup prompt
 - [Public Protocol v1.0](docs/PUBLIC_PROTOCOL_V1.md) — authoritative public contract
-- [Codex Setup](docs/CODEX_SETUP.md) — one compact, copyable setup prompt
 - [Integration guide](docs/INTEGRATION.md) — operational flow and executable discovery
 - [Producer Request schema](docs/PRODUCER_REQUEST_SCHEMA.md)
 - [Manifest schema](docs/MANIFEST_SCHEMA.md)
 - [Result examples](docs/RESULT_EXAMPLES.md)
+- [Architecture](docs/ARCHITECTURE.md)
 - [Security and privacy](docs/SECURITY_AND_PRIVACY.md)
 - [Synthetic samples](samples/README.md)
 
