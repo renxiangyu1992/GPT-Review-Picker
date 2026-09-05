@@ -4,7 +4,7 @@
 
 GPT Review Picker is a local Windows tool that lets an AI agent hand off completed work to an independent reviewer — with only the evidence that matters.
 
-[**Download for Windows**](https://github.com/renxiangyu1992/GPT-Review-Picker/releases) · [**Set up Codex**](docs/CODEX_SETUP.md)
+[**Download for Windows**](https://github.com/renxiangyu1992/GPT-Review-Picker/releases) · [**Set up your Agent**](docs/CODEX_SETUP.md)
 
 > The packaged Windows 10/11 x64 ZIP will appear on GitHub Releases with v0.1.0. Until then, this repository is a private preview. The source archive behind GitHub's green **Code** button is not the Windows app download.
 
@@ -26,13 +26,13 @@ GPTReviewPicker.exe
 
 The packaged build is self-contained, so it should not require a separate .NET runtime. The executable is not currently claimed to be code-signed or SmartScreen-free.
 
-### 2. Set up Codex once
+### 2. Set up your Agent
 
-Open [Codex Setup](docs/CODEX_SETUP.md) and copy its setup prompt once into your Codex or Agent instruction environment.
+Open [Agent Setup](docs/CODEX_SETUP.md), copy the single complete setup prompt, and send it once to the AI Agent you use. The Agent will integrate the rules into the persistent instruction mechanism supported by its environment, or tell you the minimum exact action required.
 
-![GPT Review Picker setup prompt placed in a Codex instruction file](docs/assets/codex-setup.png)
+![Copy the GPT Review Picker setup prompt and send it once to your Agent](docs/assets/agent-setup.png)
 
-Set up once. Then work normally. Normal users do **not** need to write Producer Request JSON by hand.
+Copy once. Send to your Agent. Then work normally. Normal users do **not** need to edit `AGENTS.md`, copy or download `PUBLIC_PROTOCOL_V1.md`, or write Producer Request JSON by hand.
 
 ### 3. Work normally
 
@@ -61,7 +61,7 @@ Do not use GitHub's repository source ZIP as a substitute for the packaged Windo
 
 ## Documentation
 
-- [Codex Setup](docs/CODEX_SETUP.md) — the authoritative one-time Agent setup prompt
+- [Agent Setup](docs/CODEX_SETUP.md) — the authoritative one-time Agent setup prompt
 - [Public Protocol v1.0](docs/PUBLIC_PROTOCOL_V1.md) — authoritative public contract
 - [Integration guide](docs/INTEGRATION.md) — operational flow and executable discovery
 - [Producer Request schema](docs/PRODUCER_REQUEST_SCHEMA.md)

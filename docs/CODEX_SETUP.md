@@ -1,12 +1,20 @@
-# Codex Setup for GPT Review Picker
+# Agent Setup for GPT Review Picker
 
-GPT Review Picker is a local post-completion handoff tool. The executing Agent finishes the work; a separate Reviewer judges the resulting Agent Statement and selected evidence.
+**Copy once. Send to your Agent. Then work normally.**
 
-Configure the following prompt once in the Agent environment. The full field and compatibility contract is in [PUBLIC_PROTOCOL_V1.md](PUBLIC_PROTOCOL_V1.md); it is needed when authoring or diagnosing integration details, not for every trivial task.
+Copy the entire single prompt block below and send it once to the AI Agent you use for your work. The Agent should integrate these rules into the persistent, global, or project instruction mechanism appropriate for its environment when supported. If it cannot do that safely or automatically, it should tell you only the minimum exact setup step you need to perform.
 
-## Copyable setup prompt
+You do **not** need to open, copy, download, or paste [PUBLIC_PROTOCOL_V1.md](PUBLIC_PROTOCOL_V1.md) for normal setup. The Public Protocol is detailed reference documentation for integration, troubleshooting, compatibility, developers, and advanced Agent implementation.
+
+Once your Agent has integrated this prompt persistently, you do **not** need to send it again for every task.
+
+## Copy this one complete prompt
 
 ```text
+Integrate the following GPT Review Picker instructions into the persistent instruction mechanism appropriate for your current Agent environment. Prefer persistent, global, or project instructions that apply to future work over requiring the user to repeat these rules in every task.
+
+If you can safely update the appropriate instruction mechanism yourself, do so. If user action is required, tell the user only the minimum exact step needed. Do not claim that setup is persistent unless it actually is, and do not repeatedly ask the user to paste these instructions once persistent setup is complete.
+
 Use GPT Review Picker only as a post-completion review handoff. Executor and Reviewer are separate roles: complete the substantive task and normal verification first; Picker does not execute the task or decide whether it succeeded.
 
 Trigger a Review Handoff only when a substantive reviewable result exists (for example meaningful code, document, spreadsheet/data, image/design, analysis/report, build/release, or consequential configuration work), unless the user explicitly requests or suppresses review. Do not trigger by default for ordinary questions, casual discussion, tiny operational answers, status checks, simple navigation, read-only exploration, or trivial actions. Do not require GPT_REVIEW_HANDOFF.md.
